@@ -14,7 +14,9 @@ public class FootballMatch {
      * то возвращать 1
      * если не угадал ничего - возвращать 0.</p>
      */
-    public int matchResult(int result1, int result2, int bet1, int bet2) {
-        return 0;
+    public int matchResult(int points1, int points2, int bet1, int bet2) {
+        return (points1 == bet1 && points2 == bet2) ? 2 : ((points1 < points2 && bet1 < bet2
+                || points1 > points2 && bet1 > bet2
+                || points1 == points2 && bet1 == bet2) ? 1 : 0);
     }
 }
